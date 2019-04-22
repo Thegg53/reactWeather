@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import MessageArea from "./MessageArea";
 
 class BottomComponent extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
-  state = {};
   render() {
     const dToday = new Date();
     const sToday =
@@ -14,8 +10,10 @@ class BottomComponent extends Component {
       (dToday.getMonth() + 1) +
       `-` +
       dToday.getFullYear();
+    let classDayNight =
+      this.props.isNight == true ? "bottomNight" : "bottomDay";
     return (
-      <div className="bottomDay">
+      <div className={classDayNight}>
         <h2>{sToday}</h2>
         <MessageArea temperature={this.props.temperature} />
       </div>

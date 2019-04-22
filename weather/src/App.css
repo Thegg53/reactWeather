@@ -4,10 +4,21 @@
 
 .headerDay {
   background-color: #f7d21b;
+  color: black;
+}
+.headerNight {
+  background-color: #202136;
+  color: white;
 }
 
 .bottomDay {
   background-color: #f5c024;
+  color: black;
+}
+
+.bottomNight {
+  background-color: #0f0f1c;
+  color: white;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

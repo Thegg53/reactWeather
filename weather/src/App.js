@@ -16,8 +16,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // let lat = this.state.lat;
-    // let lng = this.state.lng;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         let lat = position.coords.latitude;
@@ -39,7 +37,6 @@ class App extends Component {
             return res.json();
           })
           .then(jsonResp => {
-            // console.log(jsonResp);
             jsonResp.main.temp = this.toCfromKelvin(jsonResp.main.temp);
             this.setState({
               isLoaded: true,
@@ -53,31 +50,44 @@ class App extends Component {
             });
           });
       });
-      // console.log("starting lat", lat, "lng", lng);
       this.setState({ isLoaded: true });
     }
   }
 
   render() {
     const { error, isLoaded, weather, lat, lng } = this.state;
-    // const iTemperature = parseInt(Math.random() * 40 - 10);
-
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded || !weather) {
       return <div>Loading...</div>;
     } else {
       console.log(this.state.weather);
-      const iTemperature = this.state.weather.main.temp;
+      let isNight = false;
+      if (this.state.weather.sys) {
+        let sunrise = new Date(this.state.weather.sys.sunrise * 1000);
+        console.log("sunrise ", sunrise);
+        let sunset = new Date(this.state.weather.sys.sunset * 1000);
+        console.log("sunset", sunset);
+        let now = new Date();
+        if (now < sunrise || now > sunset) {
+          //fully working version
+          isNight = true;
+        }
+        isNight = true; //test only
+        console.log("isNight", isNight);
+      }
       return (
         <div className="App">
           <HeaderComponent
-            temperature={iTemperature}
+            isNight={isNight}
             weather={weather}
             lat={lat}
             lng={lng}
           />
-          <BottomComponent temperature={iTemperature} />
+          <BottomComponent
+            isNight={isNight}
+            temperature={this.state.weather.main.temp}
+          />
         </div>
       );
     }

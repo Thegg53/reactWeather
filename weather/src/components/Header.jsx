@@ -2,23 +2,26 @@ import React, { Component } from "react";
 import TemperatureIcon from "./TemperatureIcon";
 import Location from "./Location";
 class HeaderComponent extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
-
   state = {};
 
   render() {
-    // console.log(iTemperature);
+    console.log(this.props.isNight);
+    let classDayNight =
+      this.props.isNight == true ? "headerNight" : "headerDay";
+    console.log(classDayNight);
 
     return (
-      <div className="headerDay">
+      <div className={classDayNight}>
         <Location
           lat={this.props.lat}
           lng={this.props.lng}
           name={this.props.weather.name}
         />
-        <TemperatureIcon temperature={this.props.temperature} />
+        <TemperatureIcon
+          temperature={this.props.weather.main.temp}
+          weather={this.props.weather}
+          isNight={this.props.isNight}
+        />
       </div>
     );
   }
