@@ -6,7 +6,7 @@ class TemperatureIcon extends Component {
     return (
       <div>
         temperatureIcon is working
-        <img src="../../../Icons/Dark/Clear.png" alt="iconHere" />
+        <img src="/Icons/Dark/Rain.png" alt="iconHere" />
       </div>
     );
   }
