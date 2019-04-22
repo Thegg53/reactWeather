@@ -65,16 +65,13 @@ class App extends Component {
       let isNight = false;
       if (this.state.weather.sys) {
         let sunrise = new Date(this.state.weather.sys.sunrise * 1000);
-        console.log("sunrise ", sunrise);
         let sunset = new Date(this.state.weather.sys.sunset * 1000);
-        console.log("sunset", sunset);
         let now = new Date();
         if (now < sunrise || now > sunset) {
           //fully working version
           isNight = true;
         }
         isNight = true; //test only
-        console.log("isNight", isNight);
       }
       return (
         <div className="App">

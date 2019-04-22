@@ -5,13 +5,12 @@ class HeaderComponent extends Component {
   state = {};
 
   render() {
-    console.log(this.props.isNight);
     let classDayNight =
       this.props.isNight == true ? "headerNight" : "headerDay";
-    console.log(classDayNight);
+    // console.log(classDayNight);
 
     return (
-      <div className={classDayNight}>
+      <div className={classDayNight + " container"}>
         <Location
           lat={this.props.lat}
           lng={this.props.lng}
