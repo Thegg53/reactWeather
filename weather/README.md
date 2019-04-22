@@ -1,3 +1,10 @@
+## TO DO
+
+implement the correct font.
+
+match visually with the proposed design.
+Try to test on Safari (using either ubuntu or windows...., probably will need some sort of emulator)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
