@@ -8,27 +8,27 @@ class App extends Component {
     lng: 0,
     isLoaded: false,
     error: null,
-    items: []
+    weather: null
   };
 
+  toCfromKelvin(inputT) {
+    return inputT - 273.15;
+  }
+
   componentDidMount() {
-    let lat = this.state.lat;
-    let lng = this.state.lng;
+    // let lat = this.state.lat;
+    // let lng = this.state.lng;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-        this.setState({ lat: this.lat, lng: this.lng });
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
+        this.setState({ lat: lat, lng: lng });
         // http request
         const apiKey = "fce19d58cf2749138e64640c8fce41a5"; //This should not be here is a real application
         const baseApi = "http://api.openweathermap.org/data/2.5/weather";
-
-        // const callApi = async () => {
-        //   await fetch(baseApi + `?lat=` +  this.state.lat + `&lon=` + this.state.lng +
-        //   `&APPID=` + apiKey)
-        // };
         fetch(
-          `http://api.openweathermap.org/data/2.5/weather?lat=` +
+          baseApi +
+            `?lat=` +
             this.state.lat +
             `&lon=` +
             this.state.lng +
@@ -37,17 +37,14 @@ class App extends Component {
         )
           .then(res => {
             return res.json();
-            // this.setState({
-            //   isLoaded: true,
-            //   items: res.items
-            // });
           })
           .then(jsonResp => {
-            console.log(jsonResp);
-            // this.setState({
-            //   isLoaded: true,
-            //   items: res.items
-            // });
+            // console.log(jsonResp);
+            jsonResp.main.temp = this.toCfromKelvin(jsonResp.main.temp);
+            this.setState({
+              isLoaded: true,
+              weather: jsonResp
+            });
           })
           .catch(error => {
             this.setState({
@@ -56,31 +53,29 @@ class App extends Component {
             });
           });
       });
-      console.log("starting lat", lat, "lng", lng);
-
-      // var request = new XMLHttpRequest();
-      // var requestString =
-      //   "api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=fce19d58cf2749138e64640c8fce41a5";
-      // request.open("get", requestString, true);
-      // request.send();
+      // console.log("starting lat", lat, "lng", lng);
       this.setState({ isLoaded: true });
     }
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
-    const iTemperature = parseInt(Math.random() * 40 - 10);
+    const { error, isLoaded, weather, lat, lng } = this.state;
+    // const iTemperature = parseInt(Math.random() * 40 - 10);
+
     if (error) {
       return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
+    } else if (!isLoaded || !weather) {
       return <div>Loading...</div>;
     } else {
+      console.log(this.state.weather);
+      const iTemperature = this.state.weather.main.temp;
       return (
         <div className="App">
           <HeaderComponent
             temperature={iTemperature}
-            lat={this.state.lat}
-            lng={this.state.lng}
+            weather={weather}
+            lat={lat}
+            lng={lng}
           />
           <BottomComponent temperature={iTemperature} />
         </div>

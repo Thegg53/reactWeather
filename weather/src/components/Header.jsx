@@ -13,7 +13,11 @@ class HeaderComponent extends Component {
 
     return (
       <div className="headerDay">
-        <Location lat={this.props.lat} lng={this.props.lng} />
+        <Location
+          lat={this.props.lat}
+          lng={this.props.lng}
+          name={this.props.weather.name}
+        />
         <TemperatureIcon temperature={this.props.temperature} />
       </div>
     );

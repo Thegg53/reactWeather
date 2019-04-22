@@ -4,8 +4,9 @@ class Location extends Component {
   render() {
     return (
       <div>
-        current coordinates: lat {parseInt(this.props.lat)}
-        lng {parseInt(this.props.lng)}
+        {this.props.name}
+        {/* current coordinates: lat {parseInt(this.props.lat)}
+        lng {parseInt(this.props.lng)} */}
       </div>
     );
   }
