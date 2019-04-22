@@ -9,14 +9,12 @@ class HeaderComponent extends Component {
   state = {};
 
   render() {
-    const iTemperature = this.props.temperature;
     // console.log(iTemperature);
 
     return (
       <div className="headerDay">
-        <Location />
-        <TemperatureIcon />
-        <div>{iTemperature}</div>
+        <Location lat={this.props.lat} lng={this.props.lng} />
+        <TemperatureIcon temperature={this.props.temperature} />
       </div>
     );
   }

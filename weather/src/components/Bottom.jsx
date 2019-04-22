@@ -9,7 +9,11 @@ class BottomComponent extends Component {
   render() {
     const dToday = new Date();
     const sToday =
-      dToday.getDate() + `-` + dToday.getMonth() + `-` + dToday.getFullYear();
+      dToday.getDate() +
+      `-` +
+      (dToday.getMonth() + 1) +
+      `-` +
+      dToday.getFullYear();
     return (
       <div className="bottomDay">
         <h2>{sToday}</h2>
