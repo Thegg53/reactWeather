@@ -1,10 +1,33 @@
 .App {
   text-align: center;
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 150%;
+  height: 100vh;
+}
+.paddintTop5pct {
+  padding-top: 5%;
+}
+.marginTop2vh {
+  margin-top: 2vh;
+}
+.headerElement {
+  min-height: 25vh;
 }
 
-.container {
-  display: flex;
+.iconHolder {
+  /* position: relative; */
 }
+.imageElement {
+  float: left;
+  margin-left: 10%;
+}
+.temperatureElement {
+  float: right;
+  margin-right: 10%;
+  font-size: 200%;
+}
+
 .headerDay {
   background-color: #f7d21b;
   color: black;
@@ -17,38 +40,19 @@
 .bottomDay {
   background-color: #f5c024;
   color: black;
+  height: 100%;
 }
 
 .bottomNight {
   background-color: #0f0f1c;
   color: white;
+  height: 100%;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textA {
+  font-size: 220%;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: Raleway;
+  font-weight: 800 !important;
 }

@@ -10,7 +10,7 @@ class HeaderComponent extends Component {
     // console.log(classDayNight);
 
     return (
-      <div className={classDayNight + " container"}>
+      <div className={classDayNight + " headerElement"}>
         <Location
           lat={this.props.lat}
           lng={this.props.lng}

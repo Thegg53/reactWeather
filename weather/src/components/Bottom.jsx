@@ -12,9 +12,15 @@ class BottomComponent extends Component {
       dToday.getFullYear();
     let classDayNight =
       this.props.isNight == true ? "bottomNight" : "bottomDay";
+    let styleH2 = {
+      paddingTop: "5%",
+      marginTop: "0px",
+      textAlign: "left",
+      marginLeft: "10%"
+    };
     return (
       <div className={classDayNight}>
-        <h2>{sToday}</h2>
+        <h2 style={styleH2}>{sToday}</h2>
         <MessageArea temperature={this.props.temperature} />
       </div>
     );
