@@ -1,7 +1,11 @@
 ## IMPORTANT
 
 To start the application:
+
 <code>cd weather</code>
+
+and then (by default, it runs on localhost:3000   ):
+
 <code>npm start</code>
 
 Regarding the apiKey:
