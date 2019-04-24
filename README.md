@@ -1,5 +1,9 @@
 ## IMPORTANT
 
+To start the application:
+<code>cd weather</code>
+<code>npm start</code>
+
 Regarding the apiKey:
 As a professional, Iḿ not happy with having an apiKey in my frontend javascript. Usually I make a call to an endpoint in my backend, and that endpoint would then make the call to the external api. The apiKey would be stored in my backend server, and not be shown to the enduser ever.
 
@@ -10,10 +14,6 @@ As a professional, Iḿ not happy with having an apiKey in my frontend javascrip
 ## Next Steps
 
 Do it all again, using test in the development.
-
-
-
-
 
 # Below this is the default create-react-app readme
 
