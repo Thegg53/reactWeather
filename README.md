@@ -5,6 +5,8 @@ As a professional, Iḿ not happy with having an apiKey in my frontend javascrip
 
 <s>Try to test on Safari (using either ubuntu or windows....)</s> Apparently there is an old safari version(5.17) for windows. Tried using that on Ubuntu18.04 via Wine to no avail. Tested on a windows 10 using Safari 5.1.7, it is not working. It does not support the .map() function of a js array. I am not too concerned, since youtube doesnt work in this very old browser. See the attached picture to see how youtube did it
 
+![](safariYoutube.png)
+
 # Below this is the default create-react-app readme
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
