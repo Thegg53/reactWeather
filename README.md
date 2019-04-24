@@ -4,12 +4,17 @@ To start the application:
 
 <code>cd weather</code>
 
-and then (by default, it runs on localhost:3000   ):
+and then:
 
 <code>npm start</code>
 
+by default, it runs on localhost:3000
+
+
 Regarding the apiKey:
+
 As a professional, Iḿ not happy with having an apiKey in my frontend javascript. Usually I make a call to an endpoint in my backend, and that endpoint would then make the call to the external api. The apiKey would be stored in my backend server, and not be shown to the enduser ever.
+
 
 <s>Try to test on Safari (using either ubuntu or windows....)</s> Apparently there is an old safari version(5.17) for windows. Tried using that on Ubuntu18.04 via Wine to no avail. Tested on a windows 10 using Safari 5.1.7, it is not working. It does not support the .map() function of a js array. I am not too concerned, since youtube doesnt work in this very old browser. See the attached picture to see how youtube did it.
 
