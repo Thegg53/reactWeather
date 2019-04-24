@@ -6,9 +6,7 @@ class HeaderComponent extends Component {
 
   render() {
     let classDayNight =
-      this.props.isNight == true ? "headerNight" : "headerDay";
-    // console.log(classDayNight);
-
+      this.props.isNight === true ? "headerNight" : "headerDay";
     return (
       <div className={classDayNight + " headerElement"}>
         <Location

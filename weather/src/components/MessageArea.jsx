@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
 class MessageArea extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
-
-  state = {};
   render() {
     const iTemperature = this.props.temperature;
     let sFunnyText = "";
@@ -18,11 +13,7 @@ class MessageArea extends Component {
     } else {
       sFunnyText = `It’s gettin’ hot in here... Burn burn burn... and so on`;
     }
-    // let styles = { fontWeight: 900 };
-    return (
-      // <div style={styles} className="textA">
-      <div className="textA">{sFunnyText}</div>
-    );
+    return <div className="textA">{sFunnyText}</div>;
   }
 }
 

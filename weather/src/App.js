@@ -21,9 +21,7 @@ class App extends Component {
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
         this.setState({ lat: lat, lng: lng });
-        // http request
-        const apiKey = "fce19d58cf2749138e64640c8fce41a5"; //This should not be here is a real application
-        // const apiKey = "210ea27a26676c33013ddb301f0667ff";
+        const apiKey = "210ea27a26676c33013ddb301f0667ff"; //This should not be here is a real application. read the readme for more
         const baseApi = "http://api.openweathermap.org/data/2.5/weather";
         fetch(
           baseApi +
@@ -69,10 +67,8 @@ class App extends Component {
         let sunset = new Date(this.state.weather.sys.sunset * 1000);
         let now = new Date();
         if (now < sunrise || now > sunset) {
-          //fully working version
           isNight = true;
         }
-        // isNight = true; //test only
       }
       return (
         <div className="App">
@@ -83,7 +79,6 @@ class App extends Component {
             lng={lng}
           />
           <BottomComponent
-            className="bottomElement"
             isNight={isNight}
             temperature={this.state.weather.main.temp}
           />

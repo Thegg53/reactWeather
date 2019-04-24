@@ -12,12 +12,9 @@
   margin-top: 2vh;
 }
 .headerElement {
-  min-height: 25vh;
+  height: 25vh;
 }
 
-.iconHolder {
-  /* position: relative; */
-}
 .imageElement {
   float: left;
   margin-left: 10%;
@@ -40,13 +37,13 @@
 .bottomDay {
   background-color: #f5c024;
   color: black;
-  height: 100%;
+  height: 75vh;
 }
 
 .bottomNight {
   background-color: #0f0f1c;
   color: white;
-  height: 100%;
+  height: 75vh;
 }
 .textA {
   font-size: 220%;

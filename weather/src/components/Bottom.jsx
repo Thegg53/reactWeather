@@ -11,7 +11,7 @@ class BottomComponent extends Component {
       `-` +
       dToday.getFullYear();
     let classDayNight =
-      this.props.isNight == true ? "bottomNight" : "bottomDay";
+      this.props.isNight === true ? "bottomNight" : "bottomDay";
     let styleH2 = {
       paddingTop: "5%",
       marginTop: "0px",
